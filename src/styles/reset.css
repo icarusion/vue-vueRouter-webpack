@@ -1,0 +1,83 @@
+@charset "utf-8";
+/*RESET v3*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, a, cite, img, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    border: 0;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    vertical-align: baseline;
+}
+html,body{
+    height:100%
+}
+body {
+    font-size: 14px;
+    background: #eef0f3;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+button {
+    outline: none;
+}
+ol, ul {
+    margin: 0;
+    padding: 0;
+}
+ol, ul, li {
+    list-style: none;
+}
+i, em {
+    font-style: normal;
+}
+blockquote {
+    quotes: none;
+}
+blockquote:before, blockquote:after {
+    content: '';
+    content: none;
+}
+a {
+    outline: none;
+    text-decoration: none;
+    text-decoration:none;
+    text-decoration: none;
+    transition: background-color .5s ease 0s,color .5s ease 0s,width .5s ease 0s,border-width .5s ease 0s,border-color .5s ease 0s;
+    -webkit-transition: background-color .5s ease 0s,color .5s ease 0s,width .5s ease 0s,border-width .5s ease 0s,border-color .5s ease 0s;
+    -moz-transition: background-color .5s ease 0s,color .5s ease 0s,width .5s ease 0s,border-width .5s ease 0s,border-color .5s ease 0s;
+    -ms-transition: background-color .5s ease 0s,color .5s ease 0s,width .5s ease 0s,border-width .5s ease 0s,border-color .5s ease 0s;
+    -o-transition: background-color .5s ease 0s,color .5s ease 0s,width .5s ease 0s,border-width .5s ease 0s,border-color .5s ease 0s
+}
+input, textarea{
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    outline: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+select, option{
+    font-family: inherit;
+}
+.noselect{
+    -webkit-user-select: none;
+    user-select: none;
+}
+.clear {
+    clear: both;
+}
+/*textarea,input,a{*/
+    /*-webkit-appearance: none;*/
+/*}*/
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{
+    clear:both;
+}
+.clearfix{
+    *zoom:1;
+}
