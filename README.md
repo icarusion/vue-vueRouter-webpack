@@ -37,6 +37,10 @@
     ├─images           # 放置图片
     │
     ├─styles           # 放置css
+    │    │
+    │    ├─ common.css # 通用css
+    │    │
+    │    └─ reset.css  # 页面初始化css
     │
     └─fonts            # 放置iconfont字体
 </pre>
