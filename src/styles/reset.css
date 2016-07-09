@@ -12,8 +12,7 @@ html,body{
     height:100%
 }
 body {
-    font-size: 14px;
-    background: #eef0f3;
+
 }
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
