@@ -1,7 +1,10 @@
 /**
  * Created by aresn on 16/7/18.
  */
-var config = {
 
+import Env from './env';
+
+var config = {
+    env: Env
 };
 module.exports = config;
