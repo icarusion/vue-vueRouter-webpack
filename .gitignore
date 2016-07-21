@@ -7,5 +7,5 @@ dist
 dist/*
 src/config/*.tmp
 src/config/env.js
-index.html
-index_prod.html
+/index.html
+/index_prod.html
