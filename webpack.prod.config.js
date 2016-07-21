@@ -4,19 +4,31 @@
 
 var webpack = require('webpack');
 var config = require('./webpack.base.config');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var fs = require('fs');
 
-config.output.publicPath = './dist/';
+config.output.publicPath = './dist/';                        // 资源路径,根据需要可改为cdn地址
+config.output.filename = '[name].[hash].js';                 // 带hash值的入口js名称
+config.output.chunkFilename = '[name].[hash].chunk.js';      // 带hash值的路由js名称
+
 config.plugins = (config.plugins || []).concat([
+    new ExtractTextPlugin("[name].[hash].css",{ allChunks : true,resolve : ['modules'] }),       // 提取带hash值的css名称
+    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.[hash].js'),                     // 提取带hash值的第三方库名称
     new webpack.DefinePlugin({
         'process.env': {
             NODE_ENV: '"production"'
         }
     }),
-    new webpack.optimize.UglifyJsPlugin({
+    new webpack.optimize.UglifyJsPlugin({                                                         // 压缩文件
         compress: {
             warnings: false
         }
+    }),
+    new HtmlWebpackPlugin({                                                                        // 构建html文件
+        filename: '../index_prod.html',
+        template: './src/template/index.html',
+        inject: 'body'
     })
 ]);
 

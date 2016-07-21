@@ -42,7 +42,14 @@
     │    │
     │    └─ reset.css  # 页面初始化css
     │
-    └─fonts            # 放置iconfont字体
+    ├─fonts            # 放置iconfont字体
+    │
+    │
+    └─template         # 放置html模板,webpack依赖此文件生成所需的html
+         │
+         │
+         └─ index.html # 默认的html模板
+
 </pre>
 
 
@@ -64,9 +71,18 @@ vue: {
 new ExtractTextPlugin("[name].css",{ allChunks : true,resolve : ['modules'] }),
 ```
 
+#如何使用
+
+##说明
+> 目前已将打包后的dist目录和webpack生成的index.html和index_prod.html加入了git忽略列表,如果不需要这样做,请修改。
+> 目前分开发环境和生产环境,分别对应webpack.dev.config.js和webpack.prod.config.js可以根据自己需要来调整相关webpack配置,比如添加灰度环境配置。
+> 目前的开发环境文件使用默认命名,生产环境使用带hash值的命名,可根据自己需要修改,但不建议修改本地环境为带hash的。
+> 入口的html文件模板在src/template/index.html内,可自行修改
+
 ##安装
 ```
-// 注意,需要提前在全局安装webpack和webpack-dev-server,如果已安装请忽略
+// 安装前请先确保已安装node和npm
+// 需要提前在全局安装webpack和webpack-dev-server,如果已安装请忽略
 npm install webpack -g
 npm install webpack-dev-server -g
 
@@ -77,6 +93,8 @@ npm install
 ##运行
 ####开发环境
 ```
+// 注意首次使用需要执行下面的init命令来生成入口html文件,以后不用再执行
+npm run init
 npm run dev
 ```
 

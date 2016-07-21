@@ -1,6 +1,7 @@
 /**
  * Created by aresn on 16/7/5.
  */
+
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -13,9 +14,7 @@ module.exports = {
     },
     // 输出
     output: {
-        path: path.join(__dirname, './dist'),
-        filename: '[name].js',
-        chunkFilename: '[name].chunk.js'
+        path: path.join(__dirname, './dist')
     },
     // 加载器
     module: {
@@ -54,7 +53,6 @@ module.exports = {
         }
     },
     plugins: [
-        new ExtractTextPlugin("[name].css",{ allChunks : true,resolve : ['modules'] }),
-        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
+
     ]
 };
