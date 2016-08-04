@@ -13,6 +13,18 @@ config.output.publicPath = '/dist/';                        // 资源路径
 config.output.filename = '[name].js';                       // 入口js命名
 config.output.chunkFilename = '[name].chunk.js';            // 路由js命名
 
+config.vue = {
+    loaders: {
+        css: ExtractTextPlugin.extract(
+            "style-loader",
+            "css-loader?sourceMap",
+            {
+                publicPath: "/dist/"
+            }
+        )
+    }
+};
+
 config.plugins = (config.plugins || []).concat([
     new ExtractTextPlugin("[name].css",{ allChunks : true,resolve : ['modules'] }),             // 提取CSS
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),                           // 提取第三方库

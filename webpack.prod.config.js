@@ -12,6 +12,18 @@ config.output.publicPath = './dist/';                        // 资源路径,根
 config.output.filename = '[name].[hash].js';                 // 带hash值的入口js名称
 config.output.chunkFilename = '[name].[hash].chunk.js';      // 带hash值的路由js名称
 
+config.vue = {
+    loaders: {
+        css: ExtractTextPlugin.extract(
+            "style-loader",
+            "css-loader?sourceMap",
+            {
+                publicPath: "../dist/"
+            }
+        )
+    }
+};
+
 config.plugins = (config.plugins || []).concat([
     new ExtractTextPlugin("[name].[hash].css",{ allChunks : true,resolve : ['modules'] }),       // 提取带hash值的css名称
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.[hash].js'),                     // 提取带hash值的第三方库名称

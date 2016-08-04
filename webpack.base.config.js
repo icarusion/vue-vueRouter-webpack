@@ -4,7 +4,6 @@
 
 var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     // 入口
@@ -26,17 +25,6 @@ module.exports = {
             { test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=8192'},
             { test: /\.(html|tpl)$/, loader: 'html-loader' }
         ]
-    },
-    vue: {
-        loaders: {
-            css: ExtractTextPlugin.extract(
-                "style-loader",
-                "css-loader?sourceMap",
-                {
-                    publicPath: "../dist/"
-                }
-            )
-        }
     },
     // 转es5
     babel: {
