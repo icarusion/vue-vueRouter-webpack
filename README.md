@@ -30,11 +30,13 @@
 └─src
     ├─ main.js         # 启动配置
     │
+    ├─ router.js       # 路由配置
+    │
     ├─components       # 组件
     │       │
     │       └─ app.vue # 入口组件,内含路由和公共部分
     │
-    ├─routers          # 路由
+    ├─rviews           # 视图(即路由)
     │
     ├─directives       # 自定义指令
     │
@@ -115,3 +117,11 @@ npm run build
 
 ####访问
 在浏览器地址栏输入http://127.0.0.1:8080
+
+#更新
+
+##2016.8.22
+* 全部改为ES2015
+* 抽离路由配置为router.js
+* 将routers目录重命名为views
+* vue配置默认支持less和sass
