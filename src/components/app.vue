@@ -7,20 +7,18 @@
     </div>
 </template>
 <script>
-    module.exports = {
-        data: function() {
-            return {
+    export default {
+        data () {
+            return {}
+        },
+        ready () {
 
-            }
         },
-        ready: function() {
-            
-        },
-        beforeDestroy: function() {
+        beforeDestroy () {
 
         },
         methods: {
-            
+
         }
     }
 </script>

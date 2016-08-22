@@ -1,10 +1,9 @@
 /**
  * Created by aresn on 16/7/18.
  */
-
 import Env from './env';
 
-var config = {
+let config = {
     env: Env
 };
-module.exports = config;
+export default config;

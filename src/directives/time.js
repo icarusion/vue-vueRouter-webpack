@@ -1,18 +1,17 @@
 /**
  * Created by aresn on 16/7/18.
  */
-module.exports = {
-    bind: function() {
+export default {
+    bind () {
 
     },
-    update: function() {
-        var _this = this;
+    update () {
         this.el.innerHTML = new Date();
-        this.timeout = setInterval(function() {
-            _this.el.innerHTML = new Date();
-        }, 1000);
+        this.timeout = setInterval(() => {
+            this.el.innerHTML = new Date();
+        })
     },
-    unbind: function() {
+    unbind () {
         clearInterval(this.timeout);
     }
 };

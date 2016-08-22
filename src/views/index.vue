@@ -29,22 +29,22 @@
     import NumberSeparator from '../filters/number-separator';
     import Time from '../directives/time';
 
-    module.exports = {
+    export default {
         filters: {
-            NumberSeparator: NumberSeparator
+            NumberSeparator
         },
         directives: {
             time: Time
         },
-        data: function() {
+        data () {
             return {
 
             }
         },
-        ready: function() {
-            
+        ready () {
+
         },
-        beforeDestroy: function() {
+        beforeDestroy () {
 
         },
         methods: {

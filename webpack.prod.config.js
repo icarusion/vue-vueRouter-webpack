@@ -22,6 +22,14 @@ config.vue = {
                 // 特别提醒,如果这里的publicPath是以http://xxx.xxx这样以http://开头的,要写成
                 // publicPath: "http:\\xxx.xxx",否则会编译为"http:/xxx.xxx"
             }
+        ),
+        less: ExtractTextPlugin.extract(
+            'vue-style-loader',
+            'css-loader!less-loader'
+        ),
+        sass: ExtractTextPlugin.extract(
+            'vue-style-loader',
+            'css-loader!sass-loader'
         )
     }
 };
@@ -48,7 +56,7 @@ config.plugins = (config.plugins || []).concat([
 
 // 写入环境变量
 fs.open('./src/config/env.js', 'w', function (err, fd) {
-    var buf = 'module.exports = "production";';
+    var buf = 'export default "production";';
     fs.write(fd,buf,0,buf.length,0,function(err,written,buffer){});
 });
 

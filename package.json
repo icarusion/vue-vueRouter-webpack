@@ -1,6 +1,6 @@
 {
   "name": "vue-vue-router-webpack",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A base vue project with webpack",
   "main": "index.js",
   "scripts": {

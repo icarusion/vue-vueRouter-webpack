@@ -21,6 +21,14 @@ config.vue = {
             {
                 publicPath: "/dist/"
             }
+        ),
+        less: ExtractTextPlugin.extract(
+            'vue-style-loader',
+            'css-loader!less-loader'
+        ),
+        sass: ExtractTextPlugin.extract(
+            'vue-style-loader',
+            'css-loader!sass-loader'
         )
     }
 };
@@ -37,7 +45,7 @@ config.plugins = (config.plugins || []).concat([
 
 // 写入环境变量
 fs.open('./src/config/env.js', 'w', function (err, fd) {
-    var buf = 'module.exports = "development";';
+    var buf = 'export default "development";';
     fs.write(fd,buf,0,buf.length,0,function(err,written,buffer){});
 });
 

@@ -4,7 +4,6 @@
 /**
 * 千位分隔符
 * */
-
-module.exports = function(value) {
+export default function (value) {
     return value.toString().replace(/\B(?=(\d{3})+$)/g,',');
-};
+}
