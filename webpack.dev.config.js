@@ -38,8 +38,8 @@ config.plugins = (config.plugins || []).concat([
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),                           // 提取第三方库
     new HtmlWebpackPlugin({                                                                     // 构建html文件
         filename: '../index.html',
-        template: './src/template/index.html',
-        inject: 'body'
+        template: './src/template/index.ejs',
+        inject: false
     })
 ]);
 

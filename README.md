@@ -60,7 +60,7 @@
     └─template         # 放置html模板,webpack依赖此文件生成所需的html
          │
          │
-         └─ index.html # 默认的html模板
+         └─ index.ejs # 默认的html模板
 
 </pre>
 
@@ -89,7 +89,7 @@ new ExtractTextPlugin("[name].css",{ allChunks : true,resolve : ['modules'] }),
 > 目前已将打包后的dist目录和webpack生成的index.html和index_prod.html加入了git忽略列表,如果不需要这样做,请修改。
 > 目前分开发环境和生产环境,分别对应webpack.dev.config.js和webpack.prod.config.js可以根据自己需要来调整相关webpack配置,比如添加灰度环境配置。
 > 目前的开发环境文件使用默认命名,生产环境使用带hash值的命名,可根据自己需要修改,但不建议修改本地环境为带hash的。
-> 入口的html文件模板在src/template/index.html内,可自行修改
+> 入口的html文件模板在src/template/index.ejs内,可自行修改
 
 ##安装
 ```
@@ -119,6 +119,9 @@ npm run build
 在浏览器地址栏输入http://127.0.0.1:8080
 
 #更新
+
+##2016.9.11
+* 修复打包到生产环境时,index_prod.html文件的html结构错误的bug
 
 ##2016.8.22
 * 全部改为ES2015
