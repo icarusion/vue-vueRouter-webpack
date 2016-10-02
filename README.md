@@ -120,6 +120,9 @@ npm run build
 
 #更新
 
+##2016.10.3
+* package支持了less和sass
+
 ##2016.9.11
 * 修复打包到生产环境时,index_prod.html文件的html结构错误的bug
 

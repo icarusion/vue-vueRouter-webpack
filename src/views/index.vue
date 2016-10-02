@@ -1,4 +1,4 @@
-<style scoped>
+<style scoped lang="less">
     h1{
         color: #28a7e1;
         text-align: center;
@@ -10,9 +10,9 @@
         text-align: center;
         font-size: 20px;
         margin-top: 50px;
-    }
-    img{
-        width: 150px;
+        img{
+            width: 150px;
+        }
     }
 </style>
 <template>
