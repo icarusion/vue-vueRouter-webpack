@@ -1,7 +1,8 @@
-#vue-vueRouter-webpack
+# vue-vueRouter-webpack
 > 本项目可以帮你快速搭建一个基于Vue的单页面富应用,但这并不意味着是最佳实践,所有的目录结构和webpack配置都可以根据自己需要修改
 
-##教程
+## 教程
+
 > 可以访问下面的链接来查看系列教程
 
 [Vue+Webpack开发可复用的单页面富应用教程（配置篇）](https://www.talkingcoder.com/article/6310080842228107877)
@@ -11,7 +12,9 @@
 [Vue+Webpack开发可复用的单页面富应用教程（技巧篇）](https://www.talkingcoder.com/article/6310756346094488391)
 
 [Vue+Webpack使用规范](https://www.talkingcoder.com/article/6309726065044556372)
-##目录结构
+
+## 目录结构
+
 <pre>
 │  .gitignore          # 忽略文件,比如 node_modules
 │  package.json        # 项目配置
@@ -65,7 +68,8 @@
 </pre>
 
 
-##说明
+## 说明
+
 目前已将css(使用@import的和.vue内style的)样式都独立抽离为main.css文件,如果想按需加载,可以将webpack.base.js内的如下代码注释
 ```javascript
 vue: {
@@ -83,15 +87,17 @@ vue: {
 new ExtractTextPlugin("[name].css",{ allChunks : true,resolve : ['modules'] }),
 ```
 
-#如何使用
+# 如何使用
 
-##说明
+## 说明
+
 > 目前已将打包后的dist目录和webpack生成的index.html和index_prod.html加入了git忽略列表,如果不需要这样做,请修改。
 > 目前分开发环境和生产环境,分别对应webpack.dev.config.js和webpack.prod.config.js可以根据自己需要来调整相关webpack配置,比如添加灰度环境配置。
 > 目前的开发环境文件使用默认命名,生产环境使用带hash值的命名,可根据自己需要修改,但不建议修改本地环境为带hash的。
 > 入口的html文件模板在src/template/index.ejs内,可自行修改
 
-##安装
+## 安装
+
 ```
 // 安装前请先确保已安装node和npm
 // 需要提前在全局安装webpack和webpack-dev-server,如果已安装请忽略
@@ -102,31 +108,38 @@ npm install webpack-dev-server -g
 npm install
 ```
 
-##运行
-####开发环境
+## 运行
+
+#### 开发环境
+
 ```
 // 注意首次使用需要执行下面的init命令来生成入口html文件,以后不用再执行
 npm run init
 npm run dev
 ```
 
-####生产环境(打包)
+#### 生产环境(打包)
+
 ```
 npm run build
 ```
 
-####访问
+#### 访问
+
 在浏览器地址栏输入http://127.0.0.1:8080
 
-#更新
+# 更新
 
-##2016.10.3
+## 2016.10.3
+
 * package支持了less和sass
 
-##2016.9.11
+## 2016.9.11
+
 * 修复打包到生产环境时,index_prod.html文件的html结构错误的bug
 
-##2016.8.22
+## 2016.8.22
+
 * 全部改为ES2015
 * 抽离路由配置为router.js
 * 将routers目录重命名为views
